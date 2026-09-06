@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOSTIQ - Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LOSTIQ</h1>
+        <p>Autonomous Lost & Found Recovery System</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>🔍 Report Lost Item</h2>
+
+            <input id="lostName" placeholder="Item name">
+            <input id="lostDescription" placeholder="Description">
+            <input id="lostLocation" placeholder="Location">
+            <input id="lostDate" type="datetime-local">
+
+            <button onclick="reportLost()">Report Lost Item</button>
+
+            <p id="lostResult"></p>
+        </section>
+
+
+        <section class="card">
+            <h2>📦 Report Found Item</h2>
+
+            <input id="foundName" placeholder="Item name">
+            <input id="foundCategory" placeholder="Category">
+            <input id="foundDescription" placeholder="Description">
+            <input id="foundLocation" placeholder="Location">
+            <input id="foundDate" type="datetime-local">
+
+            <button onclick="reportFound()">Report Found Item</button>
+
+            <p id="foundResult"></p>
+        </section>
+
+
+        <section class="card">
+            <h2>🤖 AI Investigation</h2>
+
+            <input id="caseId" type="number" placeholder="Enter Case ID">
+
+            <button onclick="investigate()">Start AI Investigation</button>
+
+            <div id="investigationResult"></div>
+        </section>
+
+
+        <section class="card">
+            <h2>🔐 Ownership Verification</h2>
+
+            <input id="verifyCaseId" type="number" placeholder="Case ID">
+            <input id="verifyDetail" placeholder="Unique identifying detail">
+
+            <button onclick="verifyOwnership()">Verify Ownership</button>
+
+            <div id="verifyResult"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

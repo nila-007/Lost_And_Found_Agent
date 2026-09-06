@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef2f7;
+    color: #172033;
+}
+
+/* HEADER */
+
+header {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 38px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+/* MAIN */
+
+main {
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+/* CARDS */
+
+.card {
+    background: white;
+    padding: 28px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+/* INPUTS */
+
+input {
+    width: 100%;
+    padding: 13px 15px;
+    margin: 7px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #111827;
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 9px;
+    background: #111827;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #374151;
+    transform: translateY(-1px);
+}
+
+/* RESULTS */
+
+#investigationResult,
+#verifyResult,
+#lostResult,
+#foundResult {
+    margin-top: 18px;
+    line-height: 1.7;
+}
+
+.success {
+    padding: 20px;
+    border-radius: 12px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}
+
+.success h3 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.warning {
+    padding: 18px;
+    border-radius: 12px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    main {
+        margin-top: 20px;
+        padding: 0 12px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
