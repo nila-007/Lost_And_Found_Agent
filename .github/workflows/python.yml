@@ -1,1 +1,50 @@
+name: LOSTIQ CI
 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check Python files
+        run: |
+          python -m compileall app
+
+      - name: Initialize database
+        run: |
+          python -m app.database
+
+      - name: Test tools
+        run: |
+          python -c "from app.tools.search_tools import search_found_items; print('Search tool OK')"
+          python -c "from app.tools.matching_tool import calculate_match_score; print('Matching tool OK')"
+          python -c "from app.tools.location_tool import calculate_distance; print('Location tool OK')"
+          python -c "from app.tools.verification_tool import verify_ownership; print('Verification tool OK')"
+
+      - name: Test FastAPI
+        run: |
+          python -c "from app.main import app; print('FastAPI application OK')"
